@@ -67,7 +67,7 @@ try:
 
 				#print("RED Bump")
 
-				udpMsg = "cr1"
+				udpMsg = "cr+1"
 				udpMsg = udpMsg.encode('utf-8')
 
 				UDPsendToAll(udpMsg)
@@ -99,7 +99,7 @@ try:
 
 				#print("Blue Bump")
 
-				udpMsg = "cr2"
+				udpMsg = "cr+2"
 				udpMsg = udpMsg.encode('utf-8')
 
 				UDPsendToAll(udpMsg)
