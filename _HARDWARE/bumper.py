@@ -17,7 +17,7 @@ outPinAct = 10
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(inPinRed, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(inPinBlue, GPIO.IN)
+GPIO.setup(inPinBlue, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(outPinRed, GPIO.OUT)
 GPIO.setup(outPinBlue, GPIO.OUT)
 GPIO.setup(outPinAct, GPIO.OUT)
@@ -43,17 +43,17 @@ def UDPsendToAll(msg):
 		print("Exception while sending UDP packet : ", msg)
 
 
-#Main runction
+#MAIN FUNCTION
 try:
 	while True:
 
-		#Random detection between RED and Blue
+		#Random reading detection between RED and BLUE
 		n = randint(1,2)
 
-		if n == 1:
+		if n == 1: #RED first after random
 			valueRed = GPIO.input(inPinRed)
 			valueBlue = GPIO.input(inPinBlue)
-		else:
+		else: #BLUE first after random
 			valueBlue = GPIO.input(inPinBlue)
 			valueRed = GPIO.input(inPinRed)
 
