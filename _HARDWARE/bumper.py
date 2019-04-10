@@ -37,7 +37,7 @@ ActSend = False
 def UDPsendToAll(msg):
 	try:
 		sock.sendto(msg, ("255.255.255.255", 5005))
-		sock.sendto(msg, ("10.0.0.30", 5005))
+		sock.sendto(msg, ("10.0.0.30", 33000))
 
 	except:
 		print("Exception while sending UDP packet : ", msg)
