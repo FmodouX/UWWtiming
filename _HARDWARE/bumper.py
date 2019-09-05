@@ -126,7 +126,7 @@ try:
 		#ACTivity heartbeat
 		delt = datetime.now() - ActDate
 
-		if delt.microseconds > 50000:
+		if delt.microseconds > 500000:
 			ActDate = datetime.now()
 			if ActSend:
 				ActSend = False
