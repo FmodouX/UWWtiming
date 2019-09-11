@@ -71,7 +71,7 @@ try:
 				udpMsg = udpMsg.encode('utf-8')
 
 				UDPsendToAll(udpMsg)
-				time.sleep(0.1)
+#				time.sleep(0.1)
 
 		#RED release
 		else:
@@ -86,7 +86,7 @@ try:
 
 				UDPsendToAll(udpMsg)
 
-				time.sleep(0.1)
+#				time.sleep(0.1)
 
 
 
@@ -103,7 +103,7 @@ try:
 				udpMsg = udpMsg.encode('utf-8')
 
 				UDPsendToAll(udpMsg)
-				time.sleep(0.1)
+#				time.sleep(0.1)
 				
 
 		#BLUE release
@@ -119,7 +119,7 @@ try:
 
 				UDPsendToAll(udpMsg)
 
-				time.sleep(0.1)
+#				time.sleep(0.1)
 
 
 
