@@ -104,7 +104,7 @@ try:
 
 				UDPsendToAll(udpMsg)
 #				time.sleep(0.1)
-				
+
 
 		#BLUE release
 		else:
@@ -138,7 +138,7 @@ try:
 				UDPsendToAll("ACT")
 
 
-
+		time.sleep(0.01)
 
 except:
 	print("Exception in the code, exit program")
