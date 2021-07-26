@@ -36,8 +36,8 @@ ActSend = False
 #UDP send function
 def UDPsendToAll(msg):
 	try:
-		sock.sendto(msg, ("255.255.255.255", 5005))
-		sock.sendto(msg, ("10.0.0.30", 33000))
+		sock.sendto(msg, ("255.255.255.255", 5005)) # Broadcast channel
+		sock.sendto(msg, ("10.0.0.30", 33000)) # Mat Scoring PC
 
 	except:
 		print("Exception while sending UDP packet : ", msg)
@@ -50,10 +50,10 @@ try:
 		#Random reading detection between RED and BLUE
 		n = randint(1,2)
 
-		if n == 1: #RED first after random
+		if n == 1: # RED first after random
 			valueRed = GPIO.input(inPinRed)
 			valueBlue = GPIO.input(inPinBlue)
-		else: #BLUE first after random
+		else: # BLUE first after random
 			valueBlue = GPIO.input(inPinBlue)
 			valueRed = GPIO.input(inPinRed)
 
@@ -65,7 +65,7 @@ try:
 
 				GPIO.output(outPinRed, GPIO.HIGH)
 
-				#print("RED Bump")
+				print("RED Bumped")
 
 				udpMsg = "cr+1"
 				udpMsg = udpMsg.encode('utf-8')
@@ -79,7 +79,7 @@ try:
 				RedRelease = True
 				GPIO.output(outPinRed, GPIO.LOW)
 
-				print("Red Released")
+				print("RED Released")
 
 				udpMsg = "cr-1"
                                 udpMsg = udpMsg.encode('utf-8')
@@ -97,7 +97,7 @@ try:
 
 				GPIO.output(outPinBlue, GPIO.HIGH)
 
-				#print("Blue Bump")
+				print("BLUE Bumped")
 
 				udpMsg = "cr+2"
 				udpMsg = udpMsg.encode('utf-8')
@@ -112,7 +112,7 @@ try:
 				BlueRelease = True
 				GPIO.output(outPinBlue, GPIO.LOW)
 
-				print("Blue Released")
+				print("BLUE Released")
 
 				udpMsg = "cr-2"
 				udpMsg = udpMsg.encode('utf-8')
