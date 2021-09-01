@@ -82,7 +82,7 @@ try:
 				print("RED Released")
 
 				udpMsg = "cr-1"
-                                udpMsg = udpMsg.encode('utf-8')
+				udpMsg = udpMsg.encode('utf-8')
 
 				UDPsendToAll(udpMsg)
 
@@ -135,7 +135,9 @@ try:
 				ActSend = True
 				GPIO.output(outPinAct, GPIO.HIGH)
 
-				UDPsendToAll("ACT")
+				udpMsg = "ACT"
+				udpMsg = udpMsg.encode('utf-8')
+				UDPsendToAll(udpMsg)
 
 
 		time.sleep(0.01)
