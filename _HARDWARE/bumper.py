@@ -1,6 +1,6 @@
 ###UnitedWorldWrestling Bumper HAT for Raspberry   by FmodouX !###
-###Copyright 2019 FmodouX, Frederic MODOUX, Switzerland###
-###compatible with hardware rev 1.0###
+###Copyright 2019-2024 FmodouX, Frederic MODOUX, Switzerland###
+###compatible with hardware rev 2.x###
 
 import RPi.GPIO as GPIO
 from datetime import datetime
@@ -9,11 +9,11 @@ from random import *
 import socket
 import time
 
-inPinRed = 4
-inPinBlue = 17
-outPinRed = 27
-outPinBlue = 22
-outPinAct = 10
+inPinRed = 5
+inPinBlue = 6
+outPinRed = 19
+outPinBlue = 26
+outPinAct = 13
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(inPinRed, GPIO.IN, pull_up_down=GPIO.PUD_UP)
